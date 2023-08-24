@@ -131,19 +131,23 @@ class PhoneNumberParser:
         #       )
 
 
-def run():
-    """Консольный интерфейс"""
+# def run():
+#     """Консольный интерфейс"""
+#     try:
+#         while True:
+#             # TODO сделать нормальный дружественный интерфейс
+#             path_from = input('Введите путь по которому расположен файл для парсинга с именем самого файла: \n >>> ')
+#             path_out = input('Введите путь по которому вы хотите сохранить файл с результатом парсинга: \n >>> ')
+#             print(path_from, path_out)
+#             parser = PhoneNumberParser(path_from=path_from, path_out=path_out)
+#             parser.run()
+#     except Exception as exc:
+#         print(exc)
+
+def run_parsing(path_from, path_out):
+    """Функция для графического интерфейс"""
     try:
-        while True:
-            # TODO сделать нормальный дружественный интерфейс
-            path_from = input('Введите путь по которому расположен файл для парсинга с именем самого файла: \n >>> ')
-            path_out = input('Введите путь по которому вы хотите сохранить файл с результатом парсинга: \n >>> ')
-            print(path_from, path_out)
-            parser = PhoneNumberParser(path_from=path_from, path_out=path_out)
-            parser.run()
+        parser = PhoneNumberParser(path_from=path_from, path_out=path_out)
+        parser.run()
     except Exception as exc:
         print(exc)
-
-
-if __name__ == '__main__':
-    run()
