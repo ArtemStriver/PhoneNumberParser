@@ -6,46 +6,63 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>445</width>
+    <height>200</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>PhoneNumberParser 3000</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
-   <item row="0" column="0">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Select file</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
+   <item row="4" column="1">
     <widget class="QLabel" name="label">
      <property name="text">
       <string>Select the file to parse</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="5" column="0">
     <widget class="QPushButton" name="pushButton_2">
      <property name="text">
       <string>Select folder</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
+   <item row="5" column="1">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>Select the folder where the result will be uploaded</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="6" column="0" colspan="2">
     <widget class="QPushButton" name="pushButton_3">
      <property name="text">
       <string>Run parsing</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Select file</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select a style to display the phone number.&lt;/p&gt;&lt;p&gt;1 = +79999999999&lt;/p&gt;&lt;p&gt;2 = +7 (999) 999-99-99&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QSpinBox" name="spinBox">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>2</number>
      </property>
     </widget>
    </item>

@@ -5,6 +5,10 @@ from PyQt5.QtWidgets import QFileDialog
 
 from PhoneNumberParser import run_parsing
 
+"""
+GraphicalInterface - модуль, запускающий графический интерфейс программы.
+"""
+
 print(os.path.realpath(__file__))
 dirname, filename = os.path.split(os.path.realpath(__file__))
 print(dirname)
@@ -21,6 +25,7 @@ dir_out = ''
 
 
 def on_click_select_file():
+    """Кнопка для выбора файла, который необходимо обработать."""
     global file_from
     print("'Select file' clicked!")
     dialog = QFileDialog()
@@ -30,6 +35,7 @@ def on_click_select_file():
 
 
 def on_click_select_folder():
+    """Кнопка для выбора директории, в которой будут созданы файлы с результатом обработки."""
     global dir_out
     print("'Select directory' clicked!")
     dialog = QFileDialog()
@@ -39,7 +45,9 @@ def on_click_select_folder():
 
 
 def on_click_run_parsing():
-    run_parsing(path_from=file_from, path_out=dir_out+'/')
+    """Кнопка запуска обработки. И выбор стиля обработки."""
+    line_for_size = int(form.spinBox.text())
+    run_parsing(path_from=file_from[0], path_out=dir_out + '/', style_mode=line_for_size)
     QMessageBox.information(window, "Парсинг выполнен.", "Проверьте указанную папку.", QMessageBox.Ok)
 
 
@@ -47,4 +55,5 @@ form.pushButton.clicked.connect(on_click_select_file)
 form.pushButton_2.clicked.connect(on_click_select_folder)
 form.pushButton_3.clicked.connect(on_click_run_parsing)
 
-app.exec_()
+if __name__ == '__main__':
+    app.exec_()
