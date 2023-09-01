@@ -25,7 +25,7 @@ ______
 
 Запуская файл `GraphicalInterface.py` через IDE или консоль, будет открыт графический интерфейс:
 
-![example](https://github.com/ArtemStriver/PhoneNumberParser/example.png)
+![example](https://github.com/ArtemStriver/GraphicalInterface.py/blob/master/example.png)
 
 В нем представлен пользователю следующий функционал:
  - Выбрать стиль форматирования номера;
