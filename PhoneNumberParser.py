@@ -11,11 +11,12 @@ PhoneNumberParser - модуль, в котором сосредоточен в�
 
 class PhoneNumberParser:
 
-    def __init__(self, path_from, path_out, style_mode):
+    def __init__(self, path_from, path_out, style_mode, cells):
         self.path_from = path_from
         self.path_out = path_out
         self.style_mode = style_mode
         self.index = ['-', '+', '(', ')', "'", "\n", ' ', ',']
+        self.cells = cells #['JF', 'JG', 'JH', 'JI']
         self.numbers = []
         self.correct_numbers = []
         self.incorrect_numbers = []
@@ -39,9 +40,8 @@ class PhoneNumberParser:
         book = load_workbook(filename=self.path_from, data_only=True)
         sheep = book.active
         max_rows = sheep.max_row
-        cells = ['JF', 'JG', 'JH', 'JI']  # TODO можно добавить выбор ячеек.
         for i in range(2, max_rows + 1):
-            for cell in cells:  # cell - имя столбца
+            for cell in self.cells:  # cell - имя столбца
                 number = sheep[cell + str(i)].value  # данные из определенной ячейки
                 if not number:
                     continue
@@ -148,10 +148,10 @@ class PhoneNumberParser:
         self.write_file()
 
 
-def run_parsing(path_from, path_out, style_mode):
+def run_parsing(path_from, path_out, style_mode, cells):
     """Функция для графического интерфейса."""
     try:
-        parser = PhoneNumberParser(path_from=path_from, path_out=path_out, style_mode=style_mode)
+        parser = PhoneNumberParser(path_from=path_from, path_out=path_out, style_mode=style_mode, cells=cells)
         parser.run()
     except Exception as exc:
         print(exc)

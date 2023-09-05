@@ -47,7 +47,9 @@ def on_click_select_folder():
 def on_click_run_parsing():
     """Кнопка запуска обработки. И выбор стиля обработки."""
     line_for_size = int(form.spinBox.text())
-    run_parsing(path_from=file_from[0], path_out=dir_out + '/', style_mode=line_for_size)
+    line_for_cells = form.lineEdit.text().split()
+    print(line_for_cells)
+    run_parsing(path_from=file_from[0], path_out=dir_out + '/', style_mode=line_for_size, cells=line_for_cells)
     QMessageBox.information(window, "Парсинг выполнен.", "Проверьте указанную папку.", QMessageBox.Ok)
 
 
